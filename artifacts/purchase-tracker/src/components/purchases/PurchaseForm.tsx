@@ -96,7 +96,7 @@ export function PurchaseForm({ open, onOpenChange, purchase, onSubmit }: Purchas
   useEffect(() => {
     if (document.activeElement?.getAttribute("name") === "price" || 
         document.activeElement?.getAttribute("name") === "tax") {
-      const calculatedTax = tax || (price * (settings.defaultTaxPercent / 100));
+     const calculatedTax = price * (settings.defaultTaxPercent / 100);
       if (document.activeElement?.getAttribute("name") === "price") {
         form.setValue("tax", Number(calculatedTax.toFixed(2)));
       }
